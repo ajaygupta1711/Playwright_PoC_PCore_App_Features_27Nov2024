@@ -1,0 +1,12 @@
+{
+    "ticket": {
+        "masterProject": "EMC",
+        "project": "EMC - CoreConnect",
+        "feature": "GWBC",
+        "ticketId": "Test Case Execution",
+        "complexity": "Complex",
+        "assignedUser": "Ajay Gupta (CELN00105)",
+        "priority": "High",
+        "remarks": "Test Automation"
+    }
+}
