@@ -1,6 +1,6 @@
 import { } from "@playwright/test";
 
-export class EnterDetailsOnAssignTicketPage {
+export class AddAssignTicketPage {
 
     constructor(page) {
         // Locators
@@ -16,12 +16,12 @@ export class EnterDetailsOnAssignTicketPage {
         this.priority = this.mainFrame.locator("//*[@id='ddlPriority']");
         this.remarks = this.mainFrame.locator("//*[@name='txtRemark']");
         this.saveButton = this.mainFrame.locator("//*[@id='btnSave']");
-
+        this.dueDate = this.mainFrame.locator("//*[@title='Select from date']");
     }
 
     // Methods
 
-    async enterDetailsOnAssignTicketScreen(masterProject, project, feature, ticketId, complexity, assignedUser, priority, remarks) {
+    async addAssignTicketScreen(masterProject, project, feature, ticketId, complexity, assignedUser, priority, remarks) {
         await this.masterProject.selectOption(masterProject);
         await this.page.waitForTimeout(3000);
         await this.project.selectOption(project);
@@ -33,14 +33,16 @@ export class EnterDetailsOnAssignTicketPage {
         await this.ticketId.selectOption(ticketId);
         await this.page.waitForTimeout(3000);
         await this.complexity.selectOption(complexity);
-        //await this.page.waitForTimeout(5000);
-        //await this.complexity.selectOption(assignedUser);
+        await this.page.waitForTimeout(3000);
+        await this.assignedUser.selectOption(assignedUser);
         await this.page.waitForTimeout(3000);
         await this.priority.selectOption(priority);
         await this.page.waitForTimeout(3000);
         await this.remarks.fill(remarks);
+        //await this.page.waitForTimeout(3000);
+        //await this.dueDate.click(); // Pending for current date selection
         await this.page.waitForTimeout(3000);
         await this.saveButton.click();
-        await this.page.waitForTimeout(30000);
+        //await this.page.waitForTimeout(30000);
     }
 }

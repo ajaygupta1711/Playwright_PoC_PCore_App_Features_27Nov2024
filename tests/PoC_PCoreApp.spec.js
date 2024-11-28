@@ -1,7 +1,8 @@
 import { test, expect, chromium } from '@playwright/test';
 import { LoginPage } from '../Pages/LoginPage';
 import { NavigateAssignTicketPage } from '../Pages/NavigateAssignTicketPage';
-import { EnterDetailsOnAssignTicketPage } from '../Pages/EnterDetailsOnAssignTicketPage';
+import { AddAssignTicketPage } from '../Pages/AddAssignTicketPage';
+import { NavigateTimesheetPage } from '../Pages/NavigateTimesheetPage';
 
 const testData = JSON.parse(JSON.stringify(require('../Fixtures/Credentials.json')));
 const formData = JSON.parse(JSON.stringify(require('../Fixtures/TicketDetails.json')));
@@ -9,7 +10,8 @@ const formData = JSON.parse(JSON.stringify(require('../Fixtures/TicketDetails.js
 let page = '';
 let loginPage;
 let navigateAssignTicketPage;
-let enterDetailsOnAssignTicketPage;
+let addAssignTicketPage;
+let navigateTimesheetPage;
 
 test.describe('Celsior PCore App Features', () => {
 
@@ -20,7 +22,8 @@ test.describe('Celsior PCore App Features', () => {
         page = await context.newPage();
         loginPage = new LoginPage(page);
         navigateAssignTicketPage = new NavigateAssignTicketPage(page);
-        enterDetailsOnAssignTicketPage = new EnterDetailsOnAssignTicketPage(page);
+        addAssignTicketPage = new AddAssignTicketPage(page);
+        navigateTimesheetPage = new NavigateTimesheetPage(page);
         await loginPage.navigateToApplication();
         await loginPage.fillLoginForm(testData.user.username, testData.user.password);
         await loginPage.clickSignin();
@@ -39,6 +42,10 @@ test.describe('Celsior PCore App Features', () => {
     });
 
     test('TC03_Fill the details on the assign ticket page', async () => {
-        await enterDetailsOnAssignTicketPage.enterDetailsOnAssignTicketScreen(formData.ticket.masterProject, formData.ticket.project, formData.ticket.feature, formData.ticket.ticketId, formData.ticket.complexity, formData.ticket.assignedUser, formData.ticket.priority, formData.ticket.remarks);
+        await addAssignTicketPage.addAssignTicketScreen(formData.ticket.masterProject, formData.ticket.project, formData.ticket.feature, formData.ticket.ticketId, formData.ticket.complexity, formData.ticket.assignedUser, formData.ticket.priority, formData.ticket.remarks);
+    });
+
+    test('TC04_Navigate On Timesheet Page', async () => {
+        await navigateTimesheetPage.navigateTimesheetScreen();
     });
 })
