@@ -29,7 +29,6 @@ export class LoginPage {
     }
 
     async verifyLoggedInUser() {
-        //await this.page.waitForTimeout(10000);
         await expect(this.verifyUser).toContainText('Hello, Ajay');
     }
 }

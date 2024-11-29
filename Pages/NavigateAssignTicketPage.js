@@ -1,4 +1,4 @@
-import { } from "@playwright/test";
+import { expect } from "@playwright/test";
 
 export class NavigateAssignTicketPage {
 
@@ -9,7 +9,6 @@ export class NavigateAssignTicketPage {
         this.projectMgmt = this.menuFrame.locator("//tbody//tr//td//a[@id='PCIMenut4']");
         this.tickets = this.menuFrame.locator("//tbody//tr//td//a[@id='PCIMenut11']");
         this.assign = this.menuFrame.locator("//tbody//tr//td//a[@id='PCIMenut12']");
-
     }
 
     // Methods

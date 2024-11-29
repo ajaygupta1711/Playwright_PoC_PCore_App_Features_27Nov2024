@@ -5,8 +5,9 @@ import { AddAssignTicketPage } from '../Pages/AddAssignTicketPage';
 import { NavigateTimesheetPage } from '../Pages/NavigateTimesheetPage';
 import { AddTimesheetPage } from '../Pages/AddTimesheetPage';
 
-const testData = JSON.parse(JSON.stringify(require('../Fixtures/Credentials.json')));
-const formData = JSON.parse(JSON.stringify(require('../Fixtures/TicketDetails.json')));
+const credData = JSON.parse(JSON.stringify(require('../Fixtures/Credentials.json')));
+const tktData = JSON.parse(JSON.stringify(require('../Fixtures/TicketDetails.json')));
+const timeData = JSON.parse(JSON.stringify(require('../Fixtures/TimesheetDetails.json')));
 
 let page = '';
 let loginPage;
@@ -28,7 +29,7 @@ test.describe('Celsior PCore App Features', () => {
         navigateTimesheetPage = new NavigateTimesheetPage(page);
         addTimesheetPage = new AddTimesheetPage(page);
         await loginPage.navigateToApplication();
-        await loginPage.fillLoginForm(testData.user.username, testData.user.password);
+        await loginPage.fillLoginForm(credData.user.username, credData.user.password);
         await loginPage.clickSignin();
     });
 
@@ -42,7 +43,7 @@ test.describe('Celsior PCore App Features', () => {
 
     test('TC03_Fill the details on the assign ticket page', async () => {
         await navigateAssignTicketPage.navigateOnAssignTicketScreen();
-        await addAssignTicketPage.addAssignTicketScreen(formData.ticket.masterProject, formData.ticket.project, formData.ticket.feature, formData.ticket.ticketId, formData.ticket.description, formData.ticket.complexity, formData.ticket.assignedUser, formData.ticket.priority, formData.ticket.remarks);
+        await addAssignTicketPage.addAssignTicketScreen(tktData.ticket.masterProject, tktData.ticket.project, tktData.ticket.feature, tktData.ticket.ticketId, tktData.ticket.description, tktData.ticket.complexity, tktData.ticket.assignedUser, tktData.ticket.priority, tktData.ticket.remarks);
     });
 
     test('TC04_Navigate On Timesheet Page', async () => {
@@ -51,7 +52,7 @@ test.describe('Celsior PCore App Features', () => {
 
     test('TC05_Fill the details on the timesheet page', async () => {
         await navigateTimesheetPage.navigateTimesheetScreen();
-        await addTimesheetPage.addTimesheetScreen();
+        await addTimesheetPage.addTimesheetScreen(timeData.timesheet.group, timeData.timesheet.activity, timeData.timesheet.dailyHour);
     });
 
     test.afterEach(async () => {
