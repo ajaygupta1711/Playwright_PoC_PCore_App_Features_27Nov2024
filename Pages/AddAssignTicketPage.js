@@ -11,6 +11,7 @@ export class AddAssignTicketPage {
         this.feature = this.mainFrame.locator("//*[@id='ddlFeatures']");
         this.getTicket = this.mainFrame.locator("//*[@id='lbTicketInfo']");
         this.ticketId = this.mainFrame.locator("//*[@name='ddlTicketId']");
+        this.description = this.mainFrame.locator("//*[@name='txtTicketDcpn']");
         this.complexity = this.mainFrame.locator("//*[@id='ddlComplexity']");
         this.assignedUser = this.mainFrame.locator("//*[@name='ddlAssigneduser']");
         this.priority = this.mainFrame.locator("//*[@id='ddlPriority']");
@@ -21,28 +22,27 @@ export class AddAssignTicketPage {
 
     // Methods
 
-    async addAssignTicketScreen(masterProject, project, feature, ticketId, complexity, assignedUser, priority, remarks) {
+    async addAssignTicketScreen(masterProject, project, feature, ticketId, description, complexity, assignedUser, priority, remarks) {
         await this.masterProject.selectOption(masterProject);
-        await this.page.waitForTimeout(3000);
+        await this.page.waitForTimeout(2000);
         await this.project.selectOption(project);
-        await this.page.waitForTimeout(3000);
+        await this.page.waitForTimeout(2000);
         await this.feature.selectOption(feature);
-        await this.page.waitForTimeout(3000);
+        await this.page.waitForTimeout(2000);
         await this.getTicket.click();
-        await this.page.waitForTimeout(3000);
+        await this.page.waitForTimeout(2000);
         await this.ticketId.selectOption(ticketId);
-        await this.page.waitForTimeout(3000);
+        await this.page.waitForTimeout(2000);
+        await this.description.fill(description);
+        await this.page.waitForTimeout(2000);
         await this.complexity.selectOption(complexity);
-        await this.page.waitForTimeout(3000);
+        await this.page.waitForTimeout(2000);
         await this.assignedUser.selectOption(assignedUser);
-        await this.page.waitForTimeout(3000);
+        await this.page.waitForTimeout(2000);
         await this.priority.selectOption(priority);
-        await this.page.waitForTimeout(3000);
+        await this.page.waitForTimeout(2000);
         await this.remarks.fill(remarks);
-        //await this.page.waitForTimeout(3000);
         //await this.dueDate.click(); // Pending for current date selection
-        await this.page.waitForTimeout(3000);
         await this.saveButton.click();
-        //await this.page.waitForTimeout(30000);
     }
 }
