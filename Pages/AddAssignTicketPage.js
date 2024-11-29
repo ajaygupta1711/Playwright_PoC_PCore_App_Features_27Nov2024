@@ -38,9 +38,9 @@ export class AddAssignTicketPage {
         await this.complexity.selectOption(complexity);
         await this.page.waitForTimeout(2000);
         await this.assignedUser.selectOption(assignedUser);
-        await this.page.waitForTimeout(2000);
+        //await this.page.waitForTimeout(3000);
         await this.priority.selectOption(priority);
-        await this.page.waitForTimeout(2000);
+        //await this.page.waitForTimeout(3000);
         await this.remarks.fill(remarks);
         //await this.dueDate.click(); // Pending for current date selection
         await this.saveButton.click();

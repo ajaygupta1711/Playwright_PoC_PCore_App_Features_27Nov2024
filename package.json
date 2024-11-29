@@ -1,7 +1,7 @@
 {
-  "name": "workingprojects_playwright",
+  "name": "tests",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "PoC_PCoreApp.spec.js",
   "scripts": {},
   "keywords": [],
   "author": "",
@@ -9,6 +9,6 @@
   "description": "",
   "devDependencies": {
     "@playwright/test": "^1.49.0",
-    "@types/node": "^22.9.3"
+    "@types/node": "^22.10.1"
   }
 }
