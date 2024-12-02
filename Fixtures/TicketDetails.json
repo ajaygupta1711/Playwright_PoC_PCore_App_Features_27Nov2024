@@ -8,6 +8,10 @@
         "complexity": "Complex",
         "assignedUser": "Ajay Gupta (CELN00105)",
         "priority": "High",
-        "remarks": "Test Automation"
+        "remarks": "Test Automation",
+        "dueDate": "12/02/2024",
+        "dueDateMonth": "Nov",
+        "dueDateYear": "2024",
+        "dueDateDay": "2"
     }
 }

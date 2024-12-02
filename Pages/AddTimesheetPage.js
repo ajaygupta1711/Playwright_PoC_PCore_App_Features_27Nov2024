@@ -31,11 +31,12 @@ export class AddTimesheetPage {
         await this.group.selectOption(group);
         await this.page.waitForTimeout(2000);
         await this.activity.selectOption({ label: activity });
+        await this.page.waitForTimeout(5000);
         await this.hourMon.selectOption(dailyHour);
-        await this.hourTues.selectOption(dailyHour);
-        await this.hourWed.selectOption(dailyHour);
-        await this.hourThur.selectOption(dailyHour);
-        await this.hourFri.selectOption(dailyHour);
+        //await this.hourTues.selectOption(dailyHour);
+        //await this.hourWed.selectOption(dailyHour);
+        //await this.hourThur.selectOption(dailyHour);
+        //await this.hourFri.selectOption(dailyHour);
         await this.saveButton.click();
     }
 }

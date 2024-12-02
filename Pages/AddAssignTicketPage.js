@@ -16,8 +16,13 @@ export class AddAssignTicketPage {
         this.assignedUser = this.mainFrame.locator("//*[@name='ddlAssigneduser']");
         this.priority = this.mainFrame.locator("//*[@id='ddlPriority']");
         this.remarks = this.mainFrame.locator("//*[@name='txtRemark']");
+        //this.dueDate - this.mainFrame.locator("//*[@id='txtDueDate']");
+        // this.dueDate = this.mainFrame.locator("//*[@title='Select from date']");
+        // this.dueDateCalendar = page.locator("//*[@class='ui-datepicker-calendar']");
+        // this.dueDateMonth = this.dueDateCalendar.locator("//*[@data-handler='selectMonth']//option");
+        // this.dueDateYear = this.dueDateCalendar.locator("//*[@data-handler='selectYear']//option");
+        // this.dueDateDay = this.dueDateCalendar.locator("//*[@data-handler='selectDay']//a");
         this.saveButton = this.mainFrame.locator("//*[@id='btnSave']");
-        this.dueDate = this.mainFrame.locator("//*[@title='Select from date']");
     }
 
     // Methods
@@ -40,7 +45,14 @@ export class AddAssignTicketPage {
         await this.assignedUser.selectOption(assignedUser);
         await this.priority.selectOption(priority);
         await this.remarks.fill(remarks);
-        //await this.dueDate.click(); // Pending for write method for current date selection
+        // await this.dueDate.click(); // Pending for write method for current date selection
+        // await this.page.waitForTimeout(3000);
+        // await this.dueDateMonth.selectOption(dueDateMonth);
+        // await this.page.waitForTimeout(3000);
+        // await this.dueDateYear.selectOption(dueDateYear);
+        // await this.page.waitForTimeout(3000);
+        // await this.dueDateDay.selectOption(dueDateDay);
+        // await this.page.waitForTimeout(3000);
         await this.saveButton.click();
     }
 }
