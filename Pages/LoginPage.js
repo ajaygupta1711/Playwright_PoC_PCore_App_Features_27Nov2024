@@ -16,7 +16,6 @@ export class LoginPage {
 
     async navigateToApplication() {
         await this.page.goto('https://pyramidcore.pyramidci.com/Security/PCILoginNew.aspx?logout=t');
-        //await this.page.setViewportSize({ width: 1024, height: 728 });
     }
 
     async fillLoginForm(email, password) {

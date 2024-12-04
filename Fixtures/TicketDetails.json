@@ -2,16 +2,14 @@
     "ticket": {
         "masterProject": "EMC",
         "project": "EMC - CoreConnect",
-        "feature": "GWBC",
-        "ticketId": "Test Case Execution",
+        "feature": "Actuarial App",
+        "ticketId": "Automation and Functional Testing",
+        "ticketId1": "Test Case Execution",
         "description": "Test",
         "complexity": "Complex",
         "assignedUser": "Ajay Gupta (CELN00105)",
         "priority": "High",
         "remarks": "Test Automation",
-        "dueDate": "12/02/2024",
-        "dueDateMonth": "Nov",
-        "dueDateYear": "2024",
-        "dueDateDay": "2"
+        "confirmationMessage": "Ticket has been created successfully."
     }
 }

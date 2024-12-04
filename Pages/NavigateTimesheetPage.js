@@ -13,9 +13,7 @@ export class NavigateTimesheetPage {
     // Methods
 
     async navigateTimesheetScreen() {
-        await this.page.waitForTimeout(3000);
         await this.timesheet.click();
-        await this.page.waitForTimeout(3000);
         await this.myTimesheet.click();
     }
 }

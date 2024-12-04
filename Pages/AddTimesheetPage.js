@@ -23,20 +23,18 @@ export class AddTimesheetPage {
 
     // Methods
     async addTimesheetScreen(group, activity, dailyHour) {
-        //await this.addButton.click();
         await this.ticketNo.click();
-        await this.page.waitForTimeout(2000);
         await this.ticketName.click();
-        await this.page.waitForTimeout(2000);
         await this.group.selectOption(group);
-        await this.page.waitForTimeout(2000);
         await this.activity.selectOption({ label: activity });
-        await this.page.waitForTimeout(5000);
         await this.hourMon.selectOption(dailyHour);
-        //await this.hourTues.selectOption(dailyHour);
-        //await this.hourWed.selectOption(dailyHour);
+        await this.hourTues.selectOption(dailyHour);
+        await this.hourWed.selectOption(dailyHour);
         //await this.hourThur.selectOption(dailyHour);
         //await this.hourFri.selectOption(dailyHour);
+    }
+
+    async clickSaveOnTimesheet() {
         await this.saveButton.click();
     }
 }

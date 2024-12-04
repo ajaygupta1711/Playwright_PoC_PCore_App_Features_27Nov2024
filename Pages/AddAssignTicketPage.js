@@ -1,4 +1,5 @@
-import { } from "@playwright/test";
+import { expect } from "@playwright/test";
+import { Console } from "console";
 
 export class AddAssignTicketPage {
 
@@ -16,18 +17,15 @@ export class AddAssignTicketPage {
         this.assignedUser = this.mainFrame.locator("//*[@name='ddlAssigneduser']");
         this.priority = this.mainFrame.locator("//*[@id='ddlPriority']");
         this.remarks = this.mainFrame.locator("//*[@name='txtRemark']");
-        //this.dueDate - this.mainFrame.locator("//*[@id='txtDueDate']");
-        // this.dueDate = this.mainFrame.locator("//*[@title='Select from date']");
-        // this.dueDateCalendar = page.locator("//*[@class='ui-datepicker-calendar']");
-        // this.dueDateMonth = this.dueDateCalendar.locator("//*[@data-handler='selectMonth']//option");
-        // this.dueDateYear = this.dueDateCalendar.locator("//*[@data-handler='selectYear']//option");
-        // this.dueDateDay = this.dueDateCalendar.locator("//*[@data-handler='selectDay']//a");
+        this.dueDate = this.mainFrame.locator("//*[@title='Select from date']");
+        this.dueDateHighlighted = this.mainFrame.locator("//*[@id='ui-datepicker-div']//tbody//td//a[@class='ui-state-default ui-state-highlight ui-state-hover']");
         this.saveButton = this.mainFrame.locator("//*[@id='btnSave']");
+        //this.confirmationMessage = this.page.locator("//button[text()='Ticket has been created successfully.']");
     }
 
     // Methods
 
-    async addAssignTicketScreen(masterProject, project, feature, ticketId, description, complexity, assignedUser, priority, remarks) {
+    async addAssignTicketScreen(masterProject, project, feature, ticketId, description, complexity, assignedUser, priority, remarks, confirmationMessage) {
         await this.masterProject.selectOption(masterProject);
         await this.page.waitForTimeout(2000);
         await this.project.selectOption(project);
@@ -37,22 +35,24 @@ export class AddAssignTicketPage {
         await this.getTicket.click();
         await this.page.waitForTimeout(2000);
         await this.ticketId.selectOption(ticketId);
-        await this.page.waitForTimeout(2000);
         await this.description.fill(description);
-        await this.page.waitForTimeout(2000);
         await this.complexity.selectOption(complexity);
-        await this.page.waitForTimeout(2000);
         await this.assignedUser.selectOption(assignedUser);
+        await this.page.waitForTimeout(2000);
         await this.priority.selectOption(priority);
         await this.remarks.fill(remarks);
-        // await this.dueDate.click(); // Pending for write method for current date selection
-        // await this.page.waitForTimeout(3000);
-        // await this.dueDateMonth.selectOption(dueDateMonth);
-        // await this.page.waitForTimeout(3000);
-        // await this.dueDateYear.selectOption(dueDateYear);
-        // await this.page.waitForTimeout(3000);
-        // await this.dueDateDay.selectOption(dueDateDay);
-        // await this.page.waitForTimeout(3000);
+        await this.dueDate.click();
+        await this.dueDateHighlighted.click();
+    }
+
+    async clickSaveOnTicket() {
         await this.saveButton.click();
+    }
+
+    async verifyClickConfirmMsg() {
+        this.page.on('dialog', async (messageDesc) => {
+            expect(messageDesc.message()).toContain(confirmationMessage);
+            await messageDesc.accept();
+        })
     }
 }
