@@ -1,7 +1,5 @@
 import { } from "@playwright/test";
 
-//const count = await rows.count();
-
 export class AddTimesheetPage {
 
     constructor(page) {

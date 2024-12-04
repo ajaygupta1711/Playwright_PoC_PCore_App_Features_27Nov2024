@@ -20,7 +20,6 @@ export class AddAssignTicketPage {
         this.dueDate = this.mainFrame.locator("//*[@title='Select from date']");
         this.dueDateHighlighted = this.mainFrame.locator("//*[@id='ui-datepicker-div']//tbody//td//a[@class='ui-state-default ui-state-highlight ui-state-hover']");
         this.saveButton = this.mainFrame.locator("//*[@id='btnSave']");
-        //this.confirmationMessage = this.page.locator("//button[text()='Ticket has been created successfully.']");
     }
 
     // Methods
