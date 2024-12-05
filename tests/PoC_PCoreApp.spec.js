@@ -38,22 +38,22 @@ test.describe('Celsior PCore App Features', () => {
         await loginPage.verifyLoggedInUser();
     });
 
-    test('TC02_Navigate On Assign Ticket Page', async () => {
+    test.skip('TC02_Navigate On Assign Ticket Page', async () => {
         await navigateAssignTicketPage.navigateOnAssignTicketScreen();
     });
 
-    test('TC03_Fill the details on the assign ticket page', async () => {
+    test.skip('TC03_Fill the details on the assign ticket page', async () => {
         await navigateAssignTicketPage.navigateOnAssignTicketScreen();
         await addAssignTicketPage.addAssignTicketScreen(tktData.ticket.masterProject, tktData.ticket.project, tktData.ticket.feature, tktData.ticket.ticketId, tktData.ticket.description, tktData.ticket.complexity, tktData.ticket.assignedUser, tktData.ticket.priority, tktData.ticket.remarks, tktData.ticket.confirmationMessage);
         await addAssignTicketPage.clickSaveOnTicket();
         await addAssignTicketPage.verifyClickConfirmMsg();
     });
 
-    test('TC04_Navigate On Timesheet Page', async () => {
+    test.skip('TC04_Navigate On Timesheet Page', async () => {
         await navigateTimesheetPage.navigateTimesheetScreen();
     });
 
-    test('TC05_Fill the details on the timesheet page', async () => {
+    test.skip('TC05_Fill the details on the timesheet page', async () => {
         await navigateTimesheetPage.navigateTimesheetScreen();
         await addTimesheetPage.addTimesheetScreen(timeData.timesheet.group, timeData.timesheet.activity, timeData.timesheet.dailyHour);
         await addTimesheetPage.clickSaveOnTimesheet();

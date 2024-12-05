@@ -5,8 +5,10 @@ export class LoginPage {
     constructor(page) {
         // Locators
         this.page = page;
-        this.email = page.locator("//*[@id='pydLogin_txtUserid']");
-        this.password = page.locator("//*[@id='pydLogin_txtUserPwd']");
+        //this.email = page.locator("//*[@id='pydLogin_txtUserid']");
+        this.email = page.getByPlaceholder("User Id / Official Email Id");
+        //this.password = page.locator("//*[@id='pydLogin_txtUserPwd']");
+        this.password = page.getByPlaceholder("Password");
         this.loginButton = page.locator("//*[@id='pydLogin_btnLogin']");
         this.topFrame = page.frameLocator("//*[@name='top']");
         this.verifyUser = this.topFrame.locator("//span[@id='lblUserName']");
