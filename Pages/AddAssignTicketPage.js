@@ -1,5 +1,4 @@
 import { expect } from "@playwright/test";
-import { Console } from "console";
 
 export class AddAssignTicketPage {
 
@@ -24,7 +23,7 @@ export class AddAssignTicketPage {
 
     // Methods
 
-    async addAssignTicketScreen(masterProject, project, feature, ticketId, description, complexity, assignedUser, priority, remarks, confirmationMessage) {
+    async addDetailsOnAssignTicketScreen(masterProject, project, feature, ticketId, description, complexity, assignedUser, priority, remarks, confirmationMessage) {
         await this.masterProject.selectOption(masterProject);
         await this.page.waitForTimeout(2000);
         await this.project.selectOption(project);

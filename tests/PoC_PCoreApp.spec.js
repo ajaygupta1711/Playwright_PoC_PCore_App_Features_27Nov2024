@@ -1,10 +1,9 @@
-import { test, expect, chromium } from '@playwright/test';
+import { test } from '@playwright/test';
 import { LoginPage } from '../Pages/LoginPage';
 import { NavigateAssignTicketPage } from '../Pages/NavigateAssignTicketPage';
 import { AddAssignTicketPage } from '../Pages/AddAssignTicketPage';
 import { NavigateTimesheetPage } from '../Pages/NavigateTimesheetPage';
 import { AddTimesheetPage } from '../Pages/AddTimesheetPage';
-import { createDiffieHellmanGroup } from 'crypto';
 
 const credData = JSON.parse(JSON.stringify(require('../Fixtures/Credentials.json')));
 const tktData = JSON.parse(JSON.stringify(require('../Fixtures/TicketDetails.json')));
@@ -38,24 +37,24 @@ test.describe('Celsior PCore App Features', () => {
         await loginPage.verifyLoggedInUser();
     });
 
-    test.skip('TC02_Navigate On Assign Ticket Page', async () => {
+    test('TC02_Navigate On Assign Ticket Page', async () => {
         await navigateAssignTicketPage.navigateOnAssignTicketScreen();
     });
 
-    test.skip('TC03_Fill the details on the assign ticket page', async () => {
+    test('TC03_Fill the details on the assign ticket page', async () => {
         await navigateAssignTicketPage.navigateOnAssignTicketScreen();
-        await addAssignTicketPage.addAssignTicketScreen(tktData.ticket.masterProject, tktData.ticket.project, tktData.ticket.feature, tktData.ticket.ticketId, tktData.ticket.description, tktData.ticket.complexity, tktData.ticket.assignedUser, tktData.ticket.priority, tktData.ticket.remarks, tktData.ticket.confirmationMessage);
+        await addAssignTicketPage.addDetailsOnAssignTicketScreen(tktData.ticket.masterProject, tktData.ticket.project, tktData.ticket.feature, tktData.ticket.ticketId, tktData.ticket.description, tktData.ticket.complexity, tktData.ticket.assignedUser, tktData.ticket.priority, tktData.ticket.remarks, tktData.ticket.confirmationMessage);
         await addAssignTicketPage.clickSaveOnTicket();
         await addAssignTicketPage.verifyClickConfirmMsg();
     });
 
-    test.skip('TC04_Navigate On Timesheet Page', async () => {
+    test('TC04_Navigate On Timesheet Page', async () => {
         await navigateTimesheetPage.navigateTimesheetScreen();
     });
 
-    test.skip('TC05_Fill the details on the timesheet page', async () => {
+    test('TC05_Fill the details on the timesheet page', async () => {
         await navigateTimesheetPage.navigateTimesheetScreen();
-        await addTimesheetPage.addTimesheetScreen(timeData.timesheet.group, timeData.timesheet.activity, timeData.timesheet.dailyHour);
+        await addTimesheetPage.addDetailsOnTimesheetScreen(timeData.timesheet.group, timeData.timesheet.activity, timeData.timesheet.dailyHour);
         await addTimesheetPage.clickSaveOnTimesheet();
     });
 
