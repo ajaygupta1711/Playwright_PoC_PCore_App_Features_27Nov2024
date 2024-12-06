@@ -1,13 +1,13 @@
 import { test } from '@playwright/test';
-import { LoginPage } from '../Pages/LoginPage';
-import { NavigateAssignTicketPage } from '../Pages/NavigateAssignTicketPage';
-import { AddAssignTicketPage } from '../Pages/AddAssignTicketPage';
-import { NavigateTimesheetPage } from '../Pages/NavigateTimesheetPage';
-import { AddTimesheetPage } from '../Pages/AddTimesheetPage';
+import { LoginPage } from '../pages/LoginPage';
+import { NavigateAssignTicketPage } from '../pages/NavigateAssignTicketPage';
+import { AddAssignTicketPage } from '../pages/AddAssignTicketPage';
+import { NavigateTimesheetPage } from '../pages/NavigateTimesheetPage';
+import { AddTimesheetPage } from '../pages/AddTimesheetPage';
 
-const credData = JSON.parse(JSON.stringify(require('../Fixtures/Credentials.json')));
-const tktData = JSON.parse(JSON.stringify(require('../Fixtures/TicketDetails.json')));
-const timeData = JSON.parse(JSON.stringify(require('../Fixtures/TimesheetDetails.json')));
+const credData = JSON.parse(JSON.stringify(require('../utils/Credentials.json')));
+const tktData = JSON.parse(JSON.stringify(require('../utils/TicketDetails.json')));
+const timeData = JSON.parse(JSON.stringify(require('../utils/TimesheetDetails.json')));
 
 let page = '';
 let loginPage;
