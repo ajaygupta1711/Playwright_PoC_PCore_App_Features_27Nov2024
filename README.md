@@ -1,53 +1,43 @@
 ## Project: 
-# Playwright_PoC_nopCommerceApp
+# Playwright_PoC_PCoreApp_Celsior
 
 
 ## Pre-requisites
 
-Before getting started with Selenium automation testing on LambdaTest, you need to:
+Before getting started with Playwright automation testing on LambdaTest, you need to:
 
-* Download and install **NodeJS**. You should be having **NodeJS v6 to NodeJS v16**. Click [here](https://nodejs.org/en/) to download.
+* Download and install **NodeJS**. The version is above 14. Click [here](https://nodejs.org/en/) to download.
 * Make sure you are using the latest version of **JavaScript**.
 * Install **npm** from the official website by clicking [here](https://www.npmjs.com/).
-* For Cypress Download - https://download.cypress.io/desktop (Cypress package version: 12.17.4)
+* Playwright VS Code Plugin Download - https://playwright.dev/docs/getting-started-vscode.
+* Navigate to the EXTENSIONS section and type "Playwright". There are multiple options available. Select the Playwright Test for VS Code by Microsoft option.
 
 
 ## Test Name:
-POC_nopCommerce.cy.js
+POC_PCoreApp.spec.js
 
 
 ## Features:
 * TC01_Verify Login Successful with Valid Credential.
-* TC02_Navigate to the Product Search option.
-* TC03_Search Any Product with Category.
-* TC04_Add New Product.
-* TC05_Verify Added Product on Product Search screen.
-* TC06_Edit and Upload Image with Existing Product.
-* TC07_Add and Verify New Customer.
-* TC08_Add and Verify New Discount.
-* TC09_Add New Vendor and Verify Error Message.
-* TC10_Logout from Application.
+* TC02_Navigate On Assign Ticket Page.
+* TC03_Fill the details on the assign ticket page.
+* TC04_Navigate On Timesheet Page.
+* TC05_Fill the details on the timesheet page.
 
 
 ## Commands to setup the cypress system on Local Machine:
 
 1. Open the command prompt and navigate to the path where the respository is saved.
-2. Start using below mentioned command one by one.
+2. Use below commands:
 
-* npm -install
-* npm cypress --version
-* npm install cypress -g
-* npm install --save-dev cypress-file-upload
-* npm install --save-dev cypress-axe
-* npm install --save-dev cypress-audit
-* npm install --save-dev @cypress-audit/lighthouse
+* Playwright Installation: npm init playwright -D
+* Version Check: npx playwright -version
+* Run all the tests: npx playwright test
+* Run a single test file: npx playwright test tests/todo-page.spec.ts
+* Run a set of test files: npx playwright test tests/todo-page/ tests/landing-page/
+* Run tests in headed browsers: npx playwright test --headed
+* Run all the tests against a specific project: npx playwright test --project=chromium
+* Run in debug mode with Playwright Inspector: npx playwright test --debug
+* Ask for help: npx playwright test --help
 
-3. Open the 'cypress.config.js' file and Specs Path.
-
-
-## Executing the Test
-
-* npx cypress open
-* npx cypress run --browser chrome
-* npx cypress run --browser chrome --headed
-* npx cypress run
+3. Open the 'playwright.config.js' file and Specs Path.
