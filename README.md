@@ -25,7 +25,7 @@ POC_PCoreApp.spec.js
 * TC05_Fill the details on the timesheet page.
 
 
-## Commands to setup the cypress system on Local Machine:
+## Commands to setup the Playwright system and executing the scripts on Local Machine:
 
 1. Open the command prompt and navigate to the path where the respository is saved.
 2. Use below commands:
