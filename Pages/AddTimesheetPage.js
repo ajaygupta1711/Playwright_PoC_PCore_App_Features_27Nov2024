@@ -11,6 +11,7 @@ export class AddTimesheetPage {
         this.ticketName = this.mainFrame.locator("//a[normalize-space()='Test Case Execution']");
         this.group = this.mainFrame.locator("(//*[@id='selectedGroup'])[3]");
         this.activity = this.mainFrame.locator("(//*[@name='selectedActivity'])[3]");
+        this.addButton = this.mainFrame.locator("//*[@class='btn btn-primary']");
         this.hourMon = this.mainFrame.locator("(//*[@id='selectedHour'])[15]");
         this.hourTues = this.mainFrame.locator("(//*[@id='selectedHour'])[16]");
         this.hourWed = this.mainFrame.locator("(//*[@id='selectedHour'])[17]");
@@ -21,15 +22,18 @@ export class AddTimesheetPage {
 
     // Methods
     async addDetailsOnTimesheetScreen(group, activity, dailyHour) {
+        await this.addButton.click();
         await this.ticketNo.click();
         await this.ticketName.click();
         await this.group.selectOption(group);
         await this.activity.selectOption({ label: activity });
         await this.hourMon.selectOption(dailyHour);
         await this.hourTues.selectOption(dailyHour);
+
+        /* Commented below lines due to day
         await this.hourWed.selectOption(dailyHour);
         await this.hourThur.selectOption(dailyHour);
-        await this.hourFri.selectOption(dailyHour);
+        await this.hourFri.selectOption(dailyHour); */
     }
 
     async clickSaveOnTimesheet() {

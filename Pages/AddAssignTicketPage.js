@@ -46,7 +46,6 @@ export class AddAssignTicketPage {
 
     async clickSaveOnTicket() {
         await this.saveButton.click();
-        await this.page.waitForTimeout(2000);
         await this.page.screenshot({ path: './screenshots/AddAssignTicketPage.png', fullPage: true });
     }
 
