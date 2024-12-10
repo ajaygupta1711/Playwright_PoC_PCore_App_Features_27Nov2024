@@ -43,7 +43,7 @@ POC_PCoreApp.spec.js
 The 'index.html' shows all test results in detail.
 
 
-## Screenshot: 
+## Screenshots: 
 It is added at the end of each test execution for validating the page.
 
 
