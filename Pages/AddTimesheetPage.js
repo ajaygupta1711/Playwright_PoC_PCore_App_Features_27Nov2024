@@ -26,13 +26,10 @@ export class AddTimesheetPage {
         await this.group.selectOption(group);
         await this.activity.selectOption({ label: activity });
         await this.hourMon.selectOption(dailyHour);
-
-        // Commented below lines due to day
-
-        // await this.hourTues.selectOption(dailyHour);
-        // await this.hourWed.selectOption(dailyHour);
-        // await this.hourThur.selectOption(dailyHour);
-        // await this.hourFri.selectOption(dailyHour);
+        await this.hourTues.selectOption(dailyHour);
+        await this.hourWed.selectOption(dailyHour);
+        await this.hourThur.selectOption(dailyHour);
+        await this.hourFri.selectOption(dailyHour);
     }
 
     async clickSaveOnTimesheet() {

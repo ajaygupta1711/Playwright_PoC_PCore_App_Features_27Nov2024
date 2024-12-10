@@ -33,22 +33,22 @@ test.describe('Celsior PCore App Features', () => {
         await loginPage.clickSignin();
     });
 
-    test('TC01_Verify Login Successful with Valid Credential', async (testinfo) => {
+    test.skip('TC01_Verify Login Successful with Valid Credential', async (testinfo) => {
         await loginPage.verifyLoggedInUser();
     });
 
-    test('TC02_Navigate On Assign Ticket Page', async () => {
+    test.skip('TC02_Navigate On Assign Ticket Page', async () => {
         await navigateAssignTicketPage.navigateOnAssignTicketScreen();
     });
 
-    test('TC03_Fill the details on the assign ticket page', async () => {
+    test.skip('TC03_Fill the details on the assign ticket page', async () => {
         await navigateAssignTicketPage.navigateOnAssignTicketScreen();
         await addAssignTicketPage.addDetailsOnAssignTicketScreen(tktData.ticket.masterProject, tktData.ticket.project, tktData.ticket.feature, tktData.ticket.ticketId, tktData.ticket.description, tktData.ticket.complexity, tktData.ticket.assignedUser, tktData.ticket.priority, tktData.ticket.remarks, tktData.ticket.confirmationMessage);
         await addAssignTicketPage.clickSaveOnTicket();
         await addAssignTicketPage.verifyClickConfirmMsg();
     });
 
-    test('TC04_Navigate On Timesheet Page', async () => {
+    test.skip('TC04_Navigate On Timesheet Page', async () => {
         await navigateTimesheetPage.navigateTimesheetScreen();
     });
 

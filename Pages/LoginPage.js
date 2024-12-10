@@ -30,7 +30,5 @@ export class LoginPage {
     async verifyLoggedInUser() {
         await expect(this.verifyUser).toContainText('Hello, Ajay');
         await this.page.screenshot({ path: './screenshots/LoginPage.png', fullPage: true });
-        //Users/ajayg/Playwright_PoC_PCoreApp_Celsior/screenprint
-        //screenprint//LoginPage.png'
     }
 }
