@@ -33,7 +33,7 @@ test.describe('Celsior PCore App Features', () => {
         await loginPage.clickSignin();
     });
 
-    test('TC01_Verify Login Successful with Valid Credential', async () => {
+    test('TC01_Verify Login Successful with Valid Credential', async (testinfo) => {
         await loginPage.verifyLoggedInUser();
     });
 

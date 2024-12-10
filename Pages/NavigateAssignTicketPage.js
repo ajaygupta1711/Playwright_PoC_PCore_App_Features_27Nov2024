@@ -17,5 +17,6 @@ export class NavigateAssignTicketPage {
         await this.projectMgmt.click();
         await this.tickets.click();
         await this.assign.click();
+        await this.page.screenshot({ path: './screenshots/NavigateAssignTicketPage.png', fullPage: true });
     }
 }

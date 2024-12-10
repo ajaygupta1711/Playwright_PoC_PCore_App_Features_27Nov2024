@@ -2,8 +2,8 @@
     "ticket": {
         "masterProject": "EMC",
         "project": "EMC - CoreConnect",
-        "feature": "Actuarial App",
-        "ticketId": "Automation and Functional Testing",
+        "feature": "Integration Testing",
+        "ticketId": "Integration Automation",
         "ticketId1": "Test Case Execution",
         "description": "Test",
         "complexity": "Complex",

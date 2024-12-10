@@ -15,5 +15,6 @@ export class NavigateTimesheetPage {
     async navigateTimesheetScreen() {
         await this.timesheet.click();
         await this.myTimesheet.click();
+        await this.page.screenshot({ path: './screenshots/NavigateTimesheetPage.png', fullPage: true });
     }
 }

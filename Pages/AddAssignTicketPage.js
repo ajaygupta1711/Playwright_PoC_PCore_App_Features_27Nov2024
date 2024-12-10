@@ -1,4 +1,5 @@
 import { expect, selectors } from "@playwright/test";
+import { exitCode } from "process";
 
 export class AddAssignTicketPage {
 
@@ -45,12 +46,15 @@ export class AddAssignTicketPage {
 
     async clickSaveOnTicket() {
         await this.saveButton.click();
+        await this.page.waitForTimeout(2000);
+        await this.page.screenshot({ path: './screenshots/AddAssignTicketPage.png', fullPage: true });
     }
 
-    async verifyClickConfirmMsg() {
+    async verifyClickConfirmMsg(confirmationMessage) {
         this.page.on('dialog', async (messageDesc) => {
             expect(messageDesc.message()).toContain(confirmationMessage);
             await messageDesc.accept();
-        })
+        }
+        )
     }
 }
