@@ -18,18 +18,43 @@ POC_PCoreApp.spec.js
 
 
 ## Features:
-* TC01_Verify Login Successful with Valid Credential.
-* TC02_Navigate On Assign Ticket Page.
-* TC03_Fill the details on the assign ticket page.
-* TC04_Navigate On Timesheet Page.
-* TC05_Fill the details on the timesheet page.
+1. TC01_Verify Login Successful with Valid Credential.
+2. TC02_Navigate On Assign Ticket Page.
+3. TC03_Fill the details on the assign ticket page.
+4. TC04_Navigate On Timesheet Page.
+5. TC05_Fill the details on the timesheet page.
+
+
+## Pages:
+1. LoginPage.js
+2. NavigateAssignTicketPage.js
+3. NavigateTimesheetPage.js
+4. AddAssignTicketPage.js
+5. AddTimesheetPage.js
+
+
+## Utils:
+1. Credentials.json
+2. TicketDetails.json
+3. TimesheetDetails.json
+
+
+## Report:
+The 'index.html' shows all test results in detail.
+
+
+## Screenshot: 
+It is added at the end of each test execution for validating the page.
+
+
+## 'Readme.md':
+It contains complete details about the developed proof of concept.
 
 
 ## Commands to setup the Playwright system and executing the scripts on Local Machine:
 
 1. Open the command prompt and navigate to the path where the respository is saved.
 2. Use below commands:
-
 * Playwright Installation: npm init playwright -D
 * Version Check: npx playwright -version
 * Run all the tests: npx playwright test
@@ -39,5 +64,4 @@ POC_PCoreApp.spec.js
 * Run all the tests against a specific project: npx playwright test --project=chromium
 * Run in debug mode with Playwright Inspector: npx playwright test --debug
 * Ask for help: npx playwright test --help
-
 3. Open the 'playwright.config.js' file and Specs Path.
